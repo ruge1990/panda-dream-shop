@@ -1,0 +1,22 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+.mat-card {
+  margin-top: -15px;
+  margin-bottom: 15px;
+  height: 200px;
+  line-height: 200px;
+  z-index: -1;
+  background-color: rgb(63, 81, 181);
+  color: white;
+  font-size: 40px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-image: url("https://i.pinimg.com/originals/e0/67/7c/e0677c3651e401f506ea4ca43439f26b.jpg");
+  background-repeat: no-repeat;
+  background-size: 10%;
+  background-position: 10% 50%;
+  background-blend-mode: lighten;
+}
