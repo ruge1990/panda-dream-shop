@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
+import { StoreModule } from '@ngrx/store';
+import { productsReducer } from './state/products.reducer';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -22,6 +27,7 @@ import { ProductListComponent } from './product-list/product-list.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    StoreModule.forRoot({ products: productsReducer}),
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

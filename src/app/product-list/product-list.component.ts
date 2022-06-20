@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { DreamerService, Product } from '../dreamer.service';
+import { Store } from '@ngrx/store';
+import { selectProducts } from '../state/products.selectors';
+import { getProductList } from '../state/products.actions';
+import { ProductsService } from './products.service';
 
 @Component({
   selector: 'app-product-list',
@@ -11,18 +13,24 @@ import { DreamerService, Product } from '../dreamer.service';
 export class ProductListComponent implements OnInit {
 
   rippleColor: string = "#ff4081";
-  productList !: Observable<Product[]>;
+  products$ = this.store.select(selectProducts);
   displayedColumns: string[] = ['id', 'product_name', 'department', 'material', 'color', 'price'];
 
   constructor(
-    private dreamerService: DreamerService
-  ) { }
+    private productsService: ProductsService,
+    private store: Store
+  ) { 
+  }
 
   ngOnInit(): void {
-    this.productList = this.dreamerService.getProductList();
+    this.productsService
+    .getProducts()
+    .subscribe((products) => this.store.dispatch(getProductList({products})));
   }
 
   newDream() {
-    this.productList = this.dreamerService.getProductList();
+    this.productsService
+    .getProducts()
+    .subscribe((products) => this.store.dispatch(getProductList({ products })));
   }
 }
