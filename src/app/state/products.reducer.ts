@@ -1,11 +1,11 @@
 import { createReducer, on } from "@ngrx/store";
 
-import { getProductList } from "./products.actions";
-import { Product, ChartData } from "../product-list/products.model";
+import { loadProductsSuccess } from "./products.actions";
+import { Product } from "./products.model";
 
 export const initialState: ReadonlyArray<Product> = [];
 
 export const productsReducer = createReducer(
     initialState,
-    on(getProductList, ( state, {products} ) => ( products )),
+    on(loadProductsSuccess, (state, {payload}) => ( payload ))
 );

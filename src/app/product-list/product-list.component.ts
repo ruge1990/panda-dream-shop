@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { selectProducts } from '../state/products.selectors';
-import { getProductList } from '../state/products.actions';
-import { ProductsService } from './products.service';
+import * as fromActions from '../state/products.actions';
 
 @Component({
   selector: 'app-product-list',
@@ -18,20 +17,15 @@ export class ProductListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'product_name', 'department', 'material', 'color', 'price'];
 
   constructor(
-    private productsService: ProductsService,
     private store: Store
   ) { 
   }
 
   ngOnInit(): void {
-    this.productsService
-    .getProducts()
-    .subscribe((products) => this.store.dispatch(getProductList({products})));
+    this.store.dispatch(fromActions.loadProducts());
   }
 
   newDream() {
-    this.productsService
-    .getProducts()
-    .subscribe((products) => this.store.dispatch(getProductList({ products })));
+    this.store.dispatch(fromActions.loadProducts());
   }
 }

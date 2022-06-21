@@ -1,7 +1,11 @@
 import { createAction, props } from '@ngrx/store';
-import { Product } from '../product-list/products.model';
+import { Product } from './products.model';
 
-export const getProductList = createAction(
-    '[Product List/API] Get Product List',
-    props<{ products: ReadonlyArray<Product> }> ()
+export const loadProducts = createAction(
+    '[Products/PAGE] Get Product List'
+    );
+
+export const loadProductsSuccess = createAction(
+    '[Products/API] Product loaded success',
+    props<{ payload: ReadonlyArray<Product> }> ()
     );

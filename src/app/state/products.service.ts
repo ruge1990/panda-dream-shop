@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { of, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Product } from './products.model';
 
 
@@ -12,7 +11,6 @@ import { Product } from './products.model';
 
 export class ProductsService {
 
-  productsList!: Product[];
   constructor(
     private http: HttpClient
   ) { }

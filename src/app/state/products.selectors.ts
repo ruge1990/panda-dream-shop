@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { Product, ChartData } from "../product-list/products.model";
+import { Product, ChartData } from "./products.model";
 
 export const selectProducts = createFeatureSelector<ReadonlyArray<Product>>('products');
 

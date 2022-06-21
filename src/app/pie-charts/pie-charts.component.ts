@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { selectPieChartData } from '../state/products.selectors';
-import { ChartData }  from '../product-list/products.model';
+import { ChartData }  from '../state/products.model';
 import { LegendPosition } from '@swimlane/ngx-charts';
 
 @Component({

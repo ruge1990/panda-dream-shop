@@ -7,7 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { productsReducer } from './state/products.reducer';
+import { ProductsEffects } from './state/products.effects';
+
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -19,6 +22,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { BarChartsComponent } from './bar-charts/bar-charts.component';
 import { PieChartsComponent } from './pie-charts/pie-charts.component';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +36,7 @@ import { PieChartsComponent } from './pie-charts/pie-charts.component';
     BrowserModule,
     HttpClientModule,
     StoreModule.forRoot({ products: productsReducer}),
+    EffectsModule.forRoot([ProductsEffects]),
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
