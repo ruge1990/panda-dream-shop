@@ -11,7 +11,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { productsReducer } from './state/products.reducer';
 import { ProductsEffects } from './state/products.effects';
 
-
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
