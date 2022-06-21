@@ -14,6 +14,7 @@ export class ProductListComponent implements OnInit {
 
   rippleColor: string = "#ff4081";
   products$ = this.store.select(selectProducts);
+
   displayedColumns: string[] = ['id', 'product_name', 'department', 'material', 'color', 'price'];
 
   constructor(

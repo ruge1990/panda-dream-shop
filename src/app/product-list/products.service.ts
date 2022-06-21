@@ -12,6 +12,7 @@ import { Product } from './products.model';
 
 export class ProductsService {
 
+  productsList!: Product[];
   constructor(
     private http: HttpClient
   ) { }

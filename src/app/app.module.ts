@@ -17,12 +17,16 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { BarChartsComponent } from './bar-charts/bar-charts.component';
+import { PieChartsComponent } from './pie-charts/pie-charts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
-    ProductListComponent
+    ProductListComponent,
+    BarChartsComponent,
+    PieChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { ProductListComponent } from './product-list/product-list.component';
     MatButtonModule,
     MatTableModule,
     MatRippleModule,
-    MatCardModule
+    MatCardModule,
+    BrowserAnimationsModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

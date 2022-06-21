@@ -10,3 +10,7 @@ export interface Product {
     promo_code: string;
   }
   
+export interface ChartData {
+  name: string;
+  value: number;
+}
